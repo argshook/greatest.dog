@@ -25,7 +25,7 @@ const generateImageWithFal = async ({
       enable_safety_checker: true,
       sync_mode: true,
       image_size: "square_hd",
-      num_inference_steps: 4,
+      num_inference_steps: 8,
       num_images: 1,
       expand_prompt: false,
       format: "jpeg",
@@ -74,21 +74,48 @@ const dogMemeBottomText = [
   "Oops did I do that?",
   "Who needs an alarm clock with me around?",
   "Will fetch for belly rubs",
-  "Smelled a comunism and ate it",
   "The end is near but the treats are too",
   "Barked at Alexa",
   "Didn’t choose the pug life, the pug life chose me",
   "Let me in charge, I’ll howl like it matters",
+  "Why does my shadow always follow me?",
+  "Chasing my tail is harder than it looks",
+  "I think I buried my bone somewhere here",
+  "Master of disguise",
+  "I herded these humans with no barking",
+  "Just another sitting professional",
+  "Let’s meet at the park and play it cool",
+  "When you find your towel fort just right",
+  "Eyeing that last slice of pizza",
+  "Happiness is a fresh tennis ball",
+  "When human is away, mischief will play",
+  "I nap, therefore I am",
+  "Excuse the mess, but I live here",
+  "Who runs the world? Dogs",
+  "Why chase postman when treats are at home?",
+  "The floor is my domain",
+  "Unauthorized shoe chewing",
+  "Dreaming of bacon rain",
+  "Slobber artist in residence",
+  "Confirmed belly rubs make you immortal",
+  "Felixed the wrong tree",
+  "First in snuggles",
+  "Couch ninja in training",
+  "Can convince anyone to share their sandwich",
+  "The paw-trick master",
+  "Currently in a kibble coma",
+  "Matching energy to caffeine level",
+  "Still cursed with the fetch gene",
 ];
 
 export default defineRoute(async (_req, _ctx) => {
   const { url } = await generateImageWithFal({
-    prompt: "fish eye lens photo of a dog sniffing the lens",
+    prompt: "fish-eye wide-angle photo of a dog snout, detailed background",
   });
 
   return (
     <div
-      class="relative w-screen h-screen bg-center bg-cover"
+      class="relative w-screen h-[100dvh] bg-center bg-cover"
       style={{
         "background-image": `url('${url}');`,
       }}
